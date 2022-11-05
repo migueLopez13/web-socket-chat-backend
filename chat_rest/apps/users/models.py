@@ -46,6 +46,8 @@ class User(AbstractBaseUser, PermissionsMixin):
     )
     active_user = models.BooleanField(default=True)
     admin_user = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
     historical = HistoricalRecords()
     objects = UserManager()
 
