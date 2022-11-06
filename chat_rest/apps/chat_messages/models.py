@@ -12,6 +12,7 @@ class Message(models.Model):
     text = models.CharField('text', blank=True, null=True, max_length=500)
     room = models.ForeignKey(
         Room,
+        related_name='messages',
         on_delete=models.CASCADE
     )
     created_at = models.DateTimeField(auto_now_add=True)
